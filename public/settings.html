@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>設定 - 文件辨識器</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-top">
+        <div>
+          <h1>設定</h1>
+          <p class="subtitle">選擇辨識方式；選 Claude API 時需輸入 API Key，設定會自動保留</p>
+        </div>
+        <a class="settings-link" href="index.html">← 返回</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel" style="max-width: 640px">
+        <h2 class="section-title">辨識方式</h2>
+
+        <label class="radio-row">
+          <input type="radio" name="mode" value="agent-sdk" />
+          <span>
+            <b>Claude Agent SDK（走訂閱額度）</b>
+            <small>沿用本機 Claude Code 的訂閱登入，不需 API Key。</small>
+          </span>
+        </label>
+
+        <label class="radio-row">
+          <input type="radio" name="mode" value="api" />
+          <span>
+            <b>Claude API（走 API Key，按 token 計費）</b>
+            <small>使用你自己的 API Key 呼叫 Messages API。</small>
+          </span>
+        </label>
+
+        <div id="apiKeyBlock" class="api-key-block" hidden>
+          <label class="field-label" for="apiKeyInput">API Key</label>
+          <input
+            id="apiKeyInput"
+            type="password"
+            class="text-input"
+            placeholder="sk-ant-..."
+            autocomplete="off"
+          />
+          <p id="keyHint" class="hint"></p>
+        </div>
+
+        <div class="toolbar" style="margin-top: 18px">
+          <button id="saveBtn" class="btn primary">儲存設定</button>
+          <span id="settingsStatus" class="status"></span>
+        </div>
+      </section>
+    </main>
+
+    <script src="settings.js"></script>
+  </body>
+</html>

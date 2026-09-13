@@ -1,0 +1,26 @@
+# Dependencies & build output
+node_modules/
+dist/
+out/
+
+# Local runtime data (API key, cost history, temporary uploads) - never commit
+data/
+uploads/
+
+# Logs
+*.log
+
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# OS clutter
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Claude Code personal settings
+.claude/settings.local.json

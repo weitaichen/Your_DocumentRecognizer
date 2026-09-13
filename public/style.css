@@ -1,0 +1,271 @@
+:root {
+  --bg: #f4f5f7;
+  --panel: #ffffff;
+  --border: #d8dbe0;
+  --text: #1f2430;
+  --muted: #7a828e;
+  --primary: #2f6bff;
+  --primary-hover: #1f57e0;
+  --accent: #eef3ff;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Microsoft JhengHei", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header {
+  padding: 20px 28px 8px;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.subtitle {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.settings-link {
+  flex-shrink: 0;
+  text-decoration: none;
+  color: var(--text);
+  border: 1px solid var(--border);
+  background: #fff;
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: background 0.15s;
+}
+
+.settings-link:hover {
+  background: var(--accent);
+}
+
+/* 花費列 */
+.cost-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  margin-top: 14px;
+  padding: 10px 14px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.cost-item {
+  color: var(--muted);
+}
+
+.cost-item b {
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.cost-item.mode {
+  margin-left: auto;
+}
+
+/* 設定頁 */
+.section-title {
+  margin: 0 0 14px;
+  font-size: 17px;
+}
+
+.radio-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.radio-row input {
+  margin-top: 3px;
+}
+
+.radio-row small {
+  display: block;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+.api-key-block {
+  margin-top: 6px;
+  padding: 12px;
+  background: var(--accent);
+  border-radius: 8px;
+}
+
+.field-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.text-input {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 12px;
+  margin: 8px 0 0;
+}
+
+main {
+  display: flex;
+  gap: 20px;
+  padding: 16px 28px 28px;
+  align-items: flex-start;
+}
+
+.panel {
+  flex: 1;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 16px;
+  min-height: 420px;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.btn {
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.btn:hover {
+  background: var(--accent);
+}
+
+.btn.primary {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background: var(--primary-hover);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* 左欄預覽 */
+.preview-wrap {
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  background: #fafbfc;
+}
+
+.preview-wrap .hint {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.preview-wrap img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+/* 狀態 */
+.status {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.status.loading {
+  color: var(--primary);
+}
+
+.status.error {
+  color: #d23b3b;
+}
+
+/* 結果表格 */
+#resultTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+#resultTable th,
+#resultTable td {
+  border: 1px solid var(--border);
+  padding: 9px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+#resultTable thead th {
+  background: var(--accent);
+  font-weight: 600;
+}
+
+#resultTable th:first-child,
+#resultTable td:first-child {
+  width: 38%;
+  color: #3a4356;
+  font-weight: 500;
+}
+
+#resultTable tbody tr:nth-child(even) {
+  background: #fafbfc;
+}
+
+#resultTable tbody tr.placeholder td,
+#resultTable tbody tr.empty td {
+  color: var(--muted);
+  text-align: center;
+  font-style: italic;
+}

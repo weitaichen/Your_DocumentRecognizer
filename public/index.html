@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>文件辨識器 · Your DocumentRecognizer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-top">
+        <div>
+          <h1>文件辨識器</h1>
+          <p class="subtitle">載入文件圖檔 → 按辨識 → 右側產生欄位表格</p>
+        </div>
+        <a class="settings-link" href="settings.html">⚙ 設定</a>
+      </div>
+      <div class="cost-bar">
+        <span class="cost-item">今日 API 花費：<b id="costToday">$0.0000</b></span>
+        <span class="cost-item">全部 API 花費：<b id="costTotal">$0.0000</b></span>
+        <span class="cost-item mode">目前模式：<b id="modeLabel">—</b></span>
+      </div>
+    </header>
+
+    <main>
+      <!-- 左欄：載入與預覽 -->
+      <section class="panel left">
+        <div class="toolbar">
+          <button id="loadBtn" class="btn">載入圖檔</button>
+          <input id="fileInput" type="file" accept="image/*" hidden />
+        </div>
+        <div id="previewWrap" class="preview-wrap empty">
+          <span id="previewHint" class="hint">尚未載入圖檔</span>
+          <img id="preview" alt="預覽" hidden />
+        </div>
+      </section>
+
+      <!-- 右欄：辨識與結果 -->
+      <section class="panel right">
+        <div class="toolbar">
+          <button id="recognizeBtn" class="btn primary" disabled>辨識</button>
+          <span id="status" class="status"></span>
+        </div>
+        <table id="resultTable">
+          <thead>
+            <tr>
+              <th>類別</th>
+              <th>數值</th>
+            </tr>
+          </thead>
+          <tbody id="resultBody">
+            <tr class="placeholder">
+              <td colspan="2">辨識結果會顯示在這裡</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

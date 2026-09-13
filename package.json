@@ -1,0 +1,21 @@
+{
+  "name": "your-document-recognizer",
+  "version": "1.0.0",
+  "description": "Extract field/value tables from document images (work orders, delivery notes, invoices) with Claude, as a local web app or Electron desktop app.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "electron": "electron electron-main.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.1.0",
+    "@anthropic-ai/sdk": "^0.111.0",
+    "express": "^4.21.2",
+    "multer": "^2.2.0"
+  },
+  "devDependencies": {
+    "electron": "^43.1.0"
+  }
+}
